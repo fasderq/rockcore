@@ -47,7 +47,7 @@ const bootstrap = async (): Promise<void> => {
     .setTitle('ROCKCORE')
     .setDescription('Description')
     .setVersion('3.0')
-    .addTag('providers')
+    .addTag('stock providers')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup(`/api/docs`, app, documentFactory, {

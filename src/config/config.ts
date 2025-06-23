@@ -1,4 +1,4 @@
-import { AppConfig, HttpConfig, Mode, NetworkConfig, NodeEnv, PathsConfig, PressConfig } from './interfaces';
+import { AppConfig, HttpConfig, NodeEnv } from './interfaces';
 import { render } from 'ejs';
 import { readFileSync } from 'fs';
 import { load } from 'js-yaml';
@@ -38,26 +38,12 @@ export class Config {
         env: process.env,
       }),
     ) as AppConfig;
-
-    if (!this.config.boxname) {
-      this.config = {
-        ...this.config,
-        boxname: readFileSync(this.BOXNAME_PATH, { encoding: 'utf8' }).trim()
-      };
-    }
   }
 
   public static get nodeEnv(): NodeEnv {
     return this.config.nodeEnv;
   }
 
-  public static get mode(): Mode {
-    return this.config.mode;
-  }
-
-  public static get boxname(): string {
-    return this.config.boxname;
-  }
 
   public static get apiPrefix(): string {
     return this.config.apiPrefix;
@@ -67,17 +53,7 @@ export class Config {
     return this.config.http;
   }
 
-  public static get paths(): PathsConfig {
-    return this.config.paths;
-  }
 
-  public static get network(): NetworkConfig {
-    return this.config.network;
-  }
-
-  public static get press(): PressConfig {
-    return this.config.press;
-  }
 
   public static get pino() {
     return {

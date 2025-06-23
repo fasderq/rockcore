@@ -1,0 +1,23 @@
+nodeEnv: <%- env.NODE_ENV || 'development' %>
+mode: <%- env.MODE || 'AFL' %>
+boxname: <%- env.BOXNAME || 'RA-73746' %>
+apiPrefix: <%- env.API_PREFIX || 'api' %>
+http:
+  host: <%- env.HTTP_HOST || '0.0.0.0' %>
+  port: <%- env.HTTP_PORT || 4000 %>
+paths:
+  inbox: <%- env.PATHS_INBOX || './server/inbox' %>
+  content: <%- env.PATHS_CONTENT || './server/content' %>
+  public: <%- env.PATHS_PUBLIC || './server/public' %>
+  logs: <%- env.PATHS_LOGS || './server/logs' %>
+  data: <%- env.PATHS_DATA || './server/data' %>
+  keys: <%- env.PATHS_KEYS || './server/keys' %>
+  boxNetworkStorage: <%- env.PATHS_BOX_NETWORK_STORAGE || './server/box_network_storage' %>
+network:
+  lookupTarget: <%- env.NETWORK_LOOKUP_TARGET || '8.8.8.8' %>
+  lookupInterval: <%- env.NETWORK_LOOKUP_INTERVAL || 30 %> # seconds
+  lookupAttempts: <%- env.NETWORK_LOOKUP_ATTEMPTS || 20 %> # times
+  isEnabled: <%- env.NETWORK_IS_ENABLED || true %>
+press:
+  enabled: <%- env.PRESS_ENABLED || true %>
+  url: <%- env.PRESS_URL || 'https://press-module.ag-ife.com' %>
